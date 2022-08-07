@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father_div {}
+
+        .child_div {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .father_div:hover .child_div {
+            display: block;
+        }
+    </style>
+    <style>
+        .second_div {
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            display: none;
+        }
+
+        .first_div:hover+.second_div {
+            display: block;
+        }
+    </style>
+    <style>
+        .second2_div {
+            width: 50px;
+            height: 50px;
+            background-color: yellowgreen;
+            display: none;
+        }
+
+        .first2_div:hover+div+div+.second2_div {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="father_div">子元素的显示隐藏(鼠标移动至子元素div不消失)
+        <div class="child_div"></div>
+    </div>
+    <p></p>
+    <div>
+        <div class="first_div">相邻的下一个兄弟元素的显示隐藏</div>
+        <div class="second_div"></div>
+    </div>
+    <p></p>
+    <div>
+        <div class="first2_div">不相邻的兄弟元素的显示隐藏(2)</div>
+        <div></div>
+        <div></div>
+        <div class="second2_div"></div>
+    </div>
+</body>
+</html>
