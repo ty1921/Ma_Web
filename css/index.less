@@ -21,7 +21,7 @@ html, body, #video-container {
     width: 100%;
     min-width: 1600px;
     height: 100%;
-    // background: url(../images/bg2.png);
+    background: url(../images/bg2.png);
     background-size: 100%;
     /* overflow: scroll; */
     height: 7184px;
@@ -261,11 +261,15 @@ html, body, #video-container {
         left: 6.5%;
         padding: 0 10px;
 
+ 
         .nav_box{
+
+           
             cursor: pointer;
             width: 100%;
             // height: 100px;
             border-bottom: 1px solid #C1C1C1;
+            overflow: hidden;
 
             .nav_title{
                 height: 88px;
@@ -293,22 +297,30 @@ html, body, #video-container {
             }
 
             .nav_content{
-                padding: 0 0 28px 22px;
-                line-height: 30px;
+                padding: 0 0 0 22px;
+                line-height: 36px;
                 font-size: 16px;
                 font-family: Source Han Sans CN;
                 font-weight: 400;
                 color: #777777;
+                height: 0;
+                
             }
+
+            // .nav_content:target {
+            //     height: 88px;
+            //     background: skyblue;
+            //     transition: 1s;
+            // }
 
            
         }
 
-        .nav_box:hover{   
-            .nav_content{
-                display: block;
-            } 
-        }
+        // .nav_box:hover{   
+        //     .nav_content{
+        //         display: block;
+        //     } 
+        // }
 
 // 这里有问题还需要修改
         // .nav_box:nth-child(n + 2) .nav_title:hover   > .nav_content {
@@ -324,14 +336,129 @@ html, body, #video-container {
         // }
 
         .nav_box:hover .nav_content {
-            display: block;
+            // display: block;
+            height: 88px;
+            // background: skyblue;
+            transition: 0.5s;
         }
 
-        .nav_box .nav_content:hover {
-            display: none;
-        }
-        
+        // .nav_box .nav_content:hover {
+        //     display: none;
+        // }
+  
  
+    }
+
+
+    ul,li{
+    
+        list-style:none;
+
+        margin:0;
+
+        -webkit-padding-start: 0;
+
+    }
+
+    .page{
+
+       width:602px;
+
+    }
+
+    #accordion{
+
+        border:1px solid #D2D2D2;
+
+        border-top:none;
+
+        width:600px;
+
+    }
+
+    #accordion input[type='radio']{
+
+        display:none;
+
+    }
+
+    #accordion label{
+
+        display:block;
+
+        font-size:16px;
+
+        background-color:#F4F4F4;
+
+        border-top:1px solid #D2D2D2;
+
+        line-height:36px;
+
+        font-weight:bold;
+
+    }
+
+    #accordion label:before{
+
+        content:"\2610";
+
+        background-color:#fff;
+
+        width:19px;
+
+        height:19px;
+
+        -moz-border-radius:10px;
+
+        -webkit-border-radius:10px;
+
+        border-radius:10px;
+
+        text-align:center;
+
+        margin:0 5px;
+
+        box-shadow:0 0 1px rgba(0,0,0,0.5);
+
+        display:inline-block;*display:inline;*zoom:1;
+
+        line-height:19px;
+
+        vertical-align:middle;
+
+    }
+
+    #accordion .accordion-content{
+
+        height:0;
+
+        overflow:hidden;
+
+        -webkit-transition:height 0.3s ease;
+
+        -moz-transition:height 0.3s ease;
+
+        -ms-transition:height 0.3s ease;
+
+        -o-transition:height 0.3s ease;
+
+        transition:height 0.3s ease;
+
+    }
+
+    #accordion .accordion-content p{
+
+        margin:10px;
+
+    }
+    
+ 
+
+    #accordion .nav_title:hover ~ .accordion-content{
+
+        height:100px;
+
+    
     }
 }
 
@@ -345,7 +472,7 @@ html, body, #video-container {
         width: 330px;
         height: 145px;
         background: #FFFFFF;
-        box-shadow: 0px 5px 8px 0px rgba(200,200,200,0.4500);
+        box-shadow: 0px 5px 8px 0px rgba(200,200,200,0.1000);
         margin: 5px;
         padding: 30px 20px;
         display: flex;
@@ -380,6 +507,8 @@ html, body, #video-container {
     }
 
     .block_item:hover{
+
+        box-shadow: 0px 5px 8px 0px rgba(200,200,200,0.4500);
 
         h2,h5{            
             color: #F06053;
@@ -544,15 +673,15 @@ html, body, #video-container {
     
         .recommed_l{
             width: 413px;
-            height: 768px;
+            height: 770px;
 
             .item1{
                 background: #F6F6F6;
-                height: 160px;        
+                height: 163.5px;        
             }
     
             .item2{
-                background: url(../images/bg3.jpg);
+                background: url(../images/bg3.png);
                 background-size: 100% 100%;    
                 height: 280px;        
      
@@ -606,7 +735,148 @@ html, body, #video-container {
 
         .recommed_r{
             flex: 1;
-            border: 1px solid red;
+            // border: 1px solid red;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 770px;
+
+            .item_r{
+                border: 1px solid #777777;
+                border-left: 0;
+                // border-bottom: 0;
+                border-collapse: collapse;
+                width: 33.333333%;
+                height: 385px;
+                text-align: left;
+                padding: 0 15px;
+                position: relative;
+
+                .title_r{
+                    margin: 20px 0 0 0;
+                    display: flex; 
+                    font-size: 24px;
+                    font-family: Source Han Sans CN;
+                    font-weight: 500;
+                    color: #2A2A2A;
+
+                    .hot{
+                        margin-left: 10px;
+                        margin-top: 5px;
+                    }
+                }
+                .title_desc{
+                    margin: 14px 0 0 0;
+                    font-size: 18px;
+                    font-family: Source Han Sans CN;
+                    font-weight: 400;
+                    color: #696969;
+                }
+                .tag_div{
+                    display: flex;                    
+                    margin-top: 10px;
+
+                    .tag{
+                        border: 1px solid #696969;
+                        padding: 3px 10px;
+                        font-size: 14px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #696969;
+                        margin-right: 8px;
+                    }
+                }
+                .service_item{
+                    margin-top: 22px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .kuai{
+                        margin-top: 5px;
+                        width: 15px;
+                        height: 15px;
+                        background: #F06053;
+                    }
+                    .sitem_l{ 
+                        margin-left: 10px;
+                        width: 180px;
+                        font-size: 18px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #2A2A2A;
+                    }
+                    .sdesc_l{ 
+                        flex: 1;
+                        font-size: 18px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #696969;
+                    }
+                }
+                .price_div{
+                    margin-top: 18px;
+                    display: flex;
+                    align-items: baseline; 
+
+                    .price{
+                        font-size: 26px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #FA978E;
+                    }
+                    .amount{
+                        width: 98px;
+                        height: 34px;
+                        font-size: 48px;
+                        font-family: fantasy;
+                        font-weight: 400;
+                        color: #F06053;
+                    }
+                    .qi{
+                        margin-left: 6px;
+                        font-size: 26px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #696969;
+                    }
+                    .sheng{
+                        margin: 0 0 0 8px;
+                    } 
+                    .sheng_price{
+                        margin: 0 0 0 8px;
+                        font-size: 16px;
+                        font-family: Source Han Sans CN;
+                        font-weight: 400;
+                        color: #ACACAC;
+                    }                    
+                }
+                .chat_div{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 62px;
+                    background: #EDEDED;
+                    border-top: 1px solid #777777;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+ 
+                    font-size: 20px;
+                    font-family: Source Han Sans CN;
+                    font-weight: 500;
+                    color: #F06053;
+                    cursor: pointer;
+
+                    .chat{
+                        width: 32px;
+                        height: 28px;
+                        margin-right: 5px;
+                    } 
+                }
+            }
+            
         }
 
        
